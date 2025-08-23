@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Check, ArrowRight, Star, Bot, BarChart, Settings, Lock } from "lucide-react";
 import { Logo } from "@/components/icons";
 import Image from "next/image";
+import { Copyright } from "./copyright";
 
 export default function Home() {
   const features = [
@@ -158,10 +159,7 @@ export default function Home() {
 
       <footer className="border-t">
         <div className="container py-8 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Logo />
-              <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} SaaS Forge. All rights reserved.</p>
-            </div>
+            <Copyright />
             <nav className="flex gap-4">
               <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">Terms</Link>
               <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">Privacy</Link>

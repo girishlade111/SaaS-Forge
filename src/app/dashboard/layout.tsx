@@ -45,7 +45,7 @@ export default function DashboardLayout({
     { href: "/dashboard/analytics", icon: <BarChart3 />, label: "Analytics" },
     { href: "/dashboard/ui-ux-analyzer", icon: <Bot />, label: "UI/UX Analyzer" },
     { href: "/dashboard/settings", icon: <Settings />, label: "Settings" },
-    { href: "/dashboard/admin", icon: <ShieldCheck />, label: "Admin Panel", pro: true },
+    { href: "/dashboard/admin", icon: <ShieldCheck />, label: "Admin Panel" },
   ];
 
   return (
@@ -53,9 +53,9 @@ export default function DashboardLayout({
       <div className="min-h-screen bg-background">
         <Sidebar>
           <SidebarHeader>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <Logo />
-              <span className="font-semibold font-headline text-lg">SaaS Forge</span>
+              <span className="font-semibold font-headline text-lg group-data-[collapsible=icon]:sr-only">SaaS Forge</span>
             </div>
           </SidebarHeader>
           <SidebarContent>
@@ -65,7 +65,7 @@ export default function DashboardLayout({
                   <SidebarMenuButton
                     asChild
                     isActive={pathname === item.href}
-                    tooltip={{ children: item.label }}
+                    tooltip={{ children: item.label, side: "right", align: "center"}}
                   >
                     <Link href={item.href}>
                       {item.icon}
@@ -79,12 +79,12 @@ export default function DashboardLayout({
           <SidebarFooter>
              <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="w-full justify-start gap-2 p-2">
-                   <Avatar className="h-8 w-8">
+                <Button variant="ghost" className="w-full justify-start gap-3 p-2 h-auto">
+                   <Avatar className="h-9 w-9">
                      <AvatarImage src={mockUser.avatar} alt={mockUser.name} />
                      <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
                    </Avatar>
-                   <div className="text-left group-data-[collapsible=icon]:hidden">
+                   <div className="text-left group-data-[collapsible=icon]:sr-only">
                     <p className="font-medium text-sm">{mockUser.name}</p>
                     <p className="text-xs text-muted-foreground">{mockUser.email}</p>
                    </div>
@@ -108,7 +108,7 @@ export default function DashboardLayout({
           </SidebarFooter>
         </Sidebar>
         <SidebarInset>
-          <header className="sticky top-0 z-40 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+          <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background/80 backdrop-blur-sm px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
             <SidebarTrigger className="md:hidden" />
             <div className="ml-auto">
               {/* Future header items like search or notifications can go here */}

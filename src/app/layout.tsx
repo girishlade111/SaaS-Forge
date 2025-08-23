@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" style={{colorScheme: "dark"}} suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background font-body antialiased", inter.variable, spaceGrotesk.variable)}>
+      <body className={cn("min-h-screen bg-background font-body antialiased", inter.variable, spaceGrotesk.variable)} suppressHydrationWarning>
         {children}
         <Toaster />
       </body>

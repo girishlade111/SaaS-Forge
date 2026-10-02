@@ -83,3 +83,13 @@ SaaS Forge includes a unique feature that leverages Google's Gemini models via G
 -   **How it works**: You provide a description of your current UI/UX and a JSON object representing user behavior data. The AI flow, defined in `src/ai/flows/ui-ux-analyzer.ts`, analyzes this input and provides actionable suggestions to improve user engagement and optimize your design.
 
 This powerful tool demonstrates how you can easily integrate Generative AI into your SaaS to provide value-added features.
+
+## About the Author
+
+**Built by Girish Lade** — [ladestack.in](https://ladestack.in)
+
+## Deploy Notes
+
+- Designed for Firebase App Hosting (`apphosting.yaml` included). Deploy with `firebase apphosting:backends:create` or push the repo and connect via the Firebase console.
+- Also deployable to Vercel or Netlify (App Router SSR).
+- Requires environment variables for Firebase config (`NEXT_PUBLIC_FIREBASE_*`), Google AI (`GEMINI_API_KEY` / `GOOGLE_GENAI_API_KEY`) for the Genkit UI/UX analyzer flows, and Stripe keys for billing.
